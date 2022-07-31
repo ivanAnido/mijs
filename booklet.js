@@ -189,9 +189,9 @@ function elegirMueble(comedor,dormitorio,living){
     return (comedor = prompt("elija el mueble por su numero: \n1-mesas \n2-sillas \n3-banquetas \n4-bancos \n5-muebles de guardado"))
     && (dormitorio = prompt("elija el mueble por su numero:  \n1-respaldo de cama \n2-pie de cama \n3-mesa de luz \n4-muebles de guardado"))
     && (living =prompt("elija el mueble por su numero:  \n1-rack \n2-comodas \n3-mesas bajas \n4-escritorio y recibidores \n5-sillones"))
-}*/
-
-//javascript5
+}
+    
+    //javascript5
 //actividad 1 la tienda
 class Tienda{
     constructor(nombre, direccion, propietario, rubro){
@@ -207,3 +207,4 @@ class Tienda{
 }
 const tienda = new Tienda("el almacen", "dardo rocha","ivan","papas")
 tienda.mostrar()
+*/
