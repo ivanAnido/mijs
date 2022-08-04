@@ -1,29 +1,3 @@
-//sumar "hola" por el numero que diga el prompt
-//declaracion e iniciacion de variables
-/*let saludo = "hola"
-let numero = parseInt(prompt("diga un numero "))
-//cliclo 
-for (let i = 1; i < numero; i++) {
-    saludo = saludo + " hola";
-}
-console.log (saludo);
-
-//concatena numeros y letras hasta que se escriba la "s"
-//declaracion e iniciacion de variables
-let numere = 0
-let number
-//ciclo
-do{
-number = prompt("decir un n°")
-console.log ( numere=numere+number)
-}while (number!="s")
-*/
-//clases
-
-
-
-
-
 
 class Muebles{
     constructor(nombre, material, medida, precio){
@@ -33,7 +7,7 @@ class Muebles{
         this.precio = precio
     }
     mostrarMueble(){
-        console.log("nombre: "+this.nombre+"\nhecha con : "+this.hechaDe+"\nmedida: "+this.medida+"\nprecio: $"+this.precio)
+        console.table("nombre: "+this.nombre+"\nhecha con : "+this.hechaDe+"\nmedida: "+this.medida+"\nprecio: $"+this.precio)
     }
 }
 
@@ -108,26 +82,15 @@ comodas.push(comoda001,comoda002)
 const mesasBajas =[]
 mesasBajas.push(mesaRatona001,mesaRatona002,mesaRatonaZoita)
 
-
-
+//ingreso de usuario
 //variables
 let muebles 
 //declaracion de variables de ambientes
 let comedor 
 let dormitorio 
 let living
-//declaracion e iniciacion de variables de muebles 
-//let mesas = "mesa de comedor 004: $109900 \nmesa de comedor 003: $88900 \nmesa de comedor 002: $112900 \nmesa comedor 001: $105900"
-//let sillas = "silla java: $21900"
-//let banquetas = "banco zoita: $21900 \nbanqueta caña: $24900 \nbanqueta java: $25900"
-//let bancos = "banco cuyo 001: $42900 \nbanco kiri 001: $18900 \nbanqueta baja Java: $17900 \nbanco Leña: $18900"
-//let mueblesGuardado = "modular 002: $145000 \nbiblioteca 001: $107900 \ngabinete 001: $98900 \nzapatero 001: $85900 \nmodular 001: $138900"
-//let respaldoCama = "respaldo de esterilla 001: $72900 \nrespaldo de esterilla 002: $84900"
-//let pieCama = "banco cuyo 001: $42900 \nbanco kiri 001: $18900 \nbanqueta baja Java: $17900 \nbanco Leña: $18900"
-//let mesasLuz = "mesa Khali: $15900 \nmesa de apoyo Gili: $44900 \nmesa Cuba: $32900 \nmesa de luz 003: $49900 \nmesa de luz 002: $48900 \nmesa de luz 001: $48900"
-//let racks = "rack Kobe 002: $145900 \ngabinete 001: $98900 \nrack tv 002: $131900 \nrack Kobe 001: $65900 \nrack tv 001: $145900"
-//let comodas = "comoda 001: $158900 \ncomoda 002: $145900 \ncomoda 003: $158900 \ngabinete 001: $98900 \ncomoda 004: $178900"
-//let mesasBajas = "mesa ratona Zoita: $91900 \nmesa ratona 001: $ 44900 \nmesa ratona 002: $98900 \nmesa ratona 003: $93900"
+
+
 //declaracion de variables ingresar
 let crearUsuario
 let crearContraseña
@@ -182,57 +145,57 @@ function elegirMueble(comedor,dormitorio,living){
   if(comedor){
     switch(comedor){
         case "1":
-            console.log(mesas)
+            console.table(mesas)
             break;    
         case "2":
-            console.log(sillas)
+            console.table(sillas)
             break;
         case "3":
-            console.log(banquetas)
+            console.table(banquetas)
             break;
         case"4":
-            console.log(bancos)
+            console.table(bancos)
             break;
         case "5":
-            console.log(mueblesGuardado)
+            console.table(mueblesGuardado)
             break;
         default:
-            console.log("opcion no valida")
+            console.table("opcion no valida")
             elegirMueble()
             break
     }
   }else if (dormitorio){
     switch(dormitorio){
         case "1":
-            console.log(respaldoCama)
+            console.table(respaldosCama)
             break;    
         case "2":
-            console.log(pieCama)
+            console.table(bancos)
             break;
         case "3":
-            console.log(mesasLuz)
+            console.table(mesasLuz)
             break;
         case "4":
-            console.log(mesasLuz)
+            console.table(mueblesGuardado)
             break;
         default:
-            console.log("opcion no valida")
+            console.table("opcion no valida")
             elegirMueble()
             break
     }
   }else if(living){
     switch(living){
         case "1":
-            console.log(racks)
+            console.table(racks)
             break;    
         case "2":
-            console.log(comodas)
+            console.table(comodas)
             break;
         case "3":
-            console.log(mesasBajas)
+            console.table(mesasBajas)
             break;
         default:
-            console.log("opcion no valida")
+            console.table("opcion no valida")
             elegirMueble()
             break
     }
@@ -241,7 +204,31 @@ function elegirMueble(comedor,dormitorio,living){
     elegirAmbiente()
   }
 }
-crearCuenta()
-ingresar()
+//crearCuenta()
+//ingresar()
 
-elegirAmbiente()
+//elegirAmbiente()
+
+//array de todos los muebles
+const totalMuebles=mesas.concat(sillas,banquetas,bancos,mueblesGuardado,respaldosCama,mesasLuz,racks,comodas,mesasBajas)
+const mueblesDormitorio=respaldosCama.concat(bancos,mesasLuz,mueblesGuardado)
+const mueblesLiving=racks.concat(comodas,mesasBajas,sillas)
+const mueblesComedor=sillas.concat(banquetas,bancos,mueblesGuardado,mesas)
+console.log (mueblesComedor)
+
+//quiero pedir un precio por prompt y se me hace un bucle y cuando pongo el numero anda bien
+//const baratos = totalMuebles.filter((mueble)=>mueble.precio<89000)
+//console.table(baratos)
+
+//ordenadas por precio
+totalMuebles.sort((a,b)=>a.precio - b.precio)
+console.table(totalMuebles)
+
+
+
+/*elegir producto a fabricar
+elegir medida 
+elegir tipo de madera si aplica
+elegir color si aplica
+aclarar tiempo de demora */ 
+

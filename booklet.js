@@ -207,4 +207,54 @@ class Tienda{
 }
 const tienda = new Tienda("el almacen", "dardo rocha","ivan","papas")
 tienda.mostrar()
+//actividad 2 
+class Tiendas{
+    constructor(nombre, direccion, propietario, rubro){
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.dueño = propietario ;
+        this.rubro = rubro
+        
+    }
+}
+let tiendaIngresada
+for(i=0;i<5;i++){
+    let tienda= new Tiendas (prompt("nombre"),
+    prompt("direccion"),
+    prompt("propietario"),
+    prompt("rubro"))
+    tiendaIngresada+=tienda.nombre+"\n"+tienda.direccion+"\n"+tienda.propietario+"\n"+tienda.rubro     
+}
+console.table(tiendaIngresada)
+//actividad 3 abierto cerrado
+class Tienda{
+    constructor(nombre, direccion, propietario, rubro){
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.dueño = propietario ;
+        this.rubro = rubro
+        
+    }
+    mostrar(){
+        console.log(this.nombre+"en "+this.direccion+"propiedad de "+this.dueño+"vende "+this.rubro)
+    }
+    estaAbierto(hora){
+        if(((hora>=8)&&(hora<=12))||((hora>=15)&&(hora<=19))){
+            return true  
+        }else{
+            return false
+        }
+    }
+}
+const tienda = new Tienda("el almacen", "dardo rocha","ivan","papas")
+tienda.mostrar()
+
+let ingreseHora= parseInt(prompt("diga la hora"))
+if(tienda.estaAbierto(ingreseHora)){
+    console.log("abierto")
+}else{
+    console.log("cerrado")
+}
 */
+//actividad 4
+ 
