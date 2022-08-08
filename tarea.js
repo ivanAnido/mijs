@@ -1,53 +1,52 @@
 
 class Muebles{
-    constructor(nombre, material, medida, precio){
+    constructor(nombre, material, medida, imagen, precio,){
         this.nombre = nombre;
         this.hechaDe = material;
         this.medida = medida;
-        this.precio = precio
-    }
-    mostrarMueble(){
-        console.table("nombre: "+this.nombre+"\nhecha con : "+this.hechaDe+"\nmedida: "+this.medida+"\nprecio: $"+this.precio)
+        this.precio = precio;
+        this.imagen = imagen;
+        
     }
 }
 
 //objetos
 //mesas
-const mesaComedor001 = new Muebles("Mesa de comedor 001","Zoita","160x90x77",105900)
-const mesaComedor002 = new Muebles("Mesa de comedor 002","Zoita","160x90",112900)
-const mesaComedor003 = new Muebles("Mesa de comedor 003","Lenga","90x120 redonda",88900)
-const mesaComedor004 = new Muebles("Mesa de comedor 004","Zoita","190x85x77",109900)
+const mesaComedor001 = new Muebles("Mesa de comedor 001".toUpperCase(),"Zoita","160x90x77","./assent/mesa comedor 001.jpeg",105900)
+const mesaComedor002 = new Muebles("Mesa de comedor 002".toUpperCase(),"Zoita","160x90","./assent/mesa comedor 002.jpeg",112900)
+const mesaComedor003 = new Muebles("Mesa de comedor 003".toUpperCase(),"Lenga","90x120 redonda","./assent/mesa comedor 003.jpeg",88900)
+const mesaComedor004 = new Muebles("Mesa de comedor 004".toUpperCase(),"Zoita","190x85x77","./assent/mesa comedor 004.png",109900)
 //sillas
-const sillaJava = new Muebles("Silla Java","hierro","40x43x80",21900)
+const sillaJava = new Muebles("Silla Java".toUpperCase(),"hierro","40x43x80","./assent/silla java.jpeg",21900)
 //banquetas
-const bancoZoita = new Muebles("Banco Zoita","Zoita","27x30x75",21900)
-const banquetaCaña = new Muebles("Banqueta Caña","caña","39x39x97",24900)
-const banquetaJava = new Muebles("Banqueta Java","hierro","34x38x97",25900)
+const bancoZoita = new Muebles("Banco Zoita".toUpperCase(),"Zoita","27x30x75","./assent/banco zoita.jpeg", 21900)
+const banquetaCaña = new Muebles("Banqueta Caña".toUpperCase(),"caña","39x39x97","./assent/banqueta caña.jpeg",24900)
+const banquetaJava = new Muebles("Banqueta Java".toUpperCase(),"hierro","34x38x97","./assent/banqueta java.jpeg",25900)
 //bancos
-const bancoCuyo = new Muebles("Banco Cuyo","Zoita","100x30x50",42900)
-const bancoKiri =new Muebles("Banco Kiri","Kiri","120x32x48",18900)
+const bancoCuyo = new Muebles("Banco Cuyo".toUpperCase(),"Zoita","100x30x50","./assent/banco cuyo.png",42900)
+const bancoKiri =new Muebles("Banco Kiri".toUpperCase(),"Kiri","120x32x48","./assent/banco kiri 001.jpeg",18900)
 //muebles de guardado
-const modular001 = new Muebles("Modular 001","Kiri","120x80x40",138900)
-const modular002 = new Muebles("Modular 002","Kiri","120x70x30",145000)
-const biblioteca001 = new Muebles("Biblioteca 001","Kiri","120x75x30",107900)
-const gabinete001 = new Muebles("Gabinete 001","Kiri","70x40x80",98900)
+const modular001 = new Muebles("Modular 001".toUpperCase(),"Kiri","120x80x40","./assent/modular 001.jpeg",138900)
+const modular002 = new Muebles("Modular 002".toUpperCase(),"Kiri","120x70x30","./assent/modular 002.png",145000)
+const biblioteca001 = new Muebles("Biblioteca 001".toUpperCase(),"Kiri","120x75x30","./assent/biblioteca 001.jpeg",107900)
+const gabinete001 = new Muebles("Gabinete 001".toUpperCase(),"Kiri","70x40x80","./assent/gabinete 001.jpeg",98900)
 //respaldos de cama
-const respaldoEsterilla = new Muebles("Respaldo de esterilla 001","Lenga","100x130",72900)
+const respaldoEsterilla = new Muebles("Respaldo de esterilla 001".toUpperCase(),"Lenga","100x130","./assent/respaldo esterilla.jpeg",72900)
 //mesas de luz
-const mesaKhali = new Muebles("Mesa Khali","Caña","42x50 redonda",15900)
-const mesaGili = new Muebles("Mesa de apoyo Gili","Zoita","38x65 redonda",44900)
-const mesaCuba = new Muebles("Mesa Cuba","Lenga","42x60 redonda",32900)
+const mesaKhali = new Muebles("Mesa Khali".toUpperCase(),"Caña","42x50 redonda","./assent/mesa de luz 003.jpeg",15900)
+const mesaGili = new Muebles("Mesa de apoyo Gili".toUpperCase(),"Zoita","38x65 redonda","./assent/mesa apoyo gili.png",44900)
+const mesaCuba = new Muebles("Mesa Cuba".toUpperCase(),"Lenga","42x60 redonda","./assent/mesa cuba.jpeg",32900)
 //Racks
-const rackKobe001 = new Muebles("Rack Kobe 001","Lenga","140x37x58",65900)
-const rackKobe002 = new Muebles("Rack Kobe 002","Lenga","140x37x58",145900)
-const rackTv001 = new Muebles("Rack TV 001","Kiri","150x45x60",145900)
+const rackKobe001 = new Muebles("Rack Kobe 001".toUpperCase(),"Lenga","140x37x58","./assent/rack kobe 001.jpeg",65900)
+const rackKobe002 = new Muebles("Rack Kobe 002".toUpperCase(),"Lenga","140x37x58","./assent/rack kobe 002.png",145900)
+const rackTv001 = new Muebles("Rack TV 001".toUpperCase(),"Kiri","150x45x60","./assent/rack tv.jpeg",145900)
 //Comodas
-const comoda001 = new Muebles("Comoda 001","Kiri","150x45x80",158900)
-const comoda002 = new Muebles("Comoda 002","Kiri","150x45x80",145900)
+const comoda001 = new Muebles("Comoda 001".toUpperCase(),"Kiri","150x45x80","./assent/comoda 002.jpeg",158900)
+const comoda002 = new Muebles("Comoda 002".toUpperCase(),"Kiri","150x45x80","./assent/comoda 003.jpeg",145900)
 //mesas bajas
-const mesaRatona001 = new Muebles("Mesa ratona 001","Kiri","120x50",44900)
-const mesaRatona002 = new Muebles("Mesa ratona 002","Lenga","80x47 redonda",98900)
-const mesaRatonaZoita = new Muebles("Mesa ratona Zoita","Zoita","120x50",91900)
+const mesaRatona001 = new Muebles("Mesa ratona 001".toUpperCase(),"Kiri","120x50","./assent/mesa ratona 001.jpeg",44900)
+const mesaRatona002 = new Muebles("Mesa ratona 002".toUpperCase(),"Lenga","80x47 redonda","./assent/mesa ratona 002.png", 98900)
+const mesaRatonaZoita = new Muebles("Mesa ratona Zoita".toUpperCase(),"Zoita","120x50","./assent/mesa ratona 003.png",91900)
 
 //arrays
 
@@ -121,7 +120,7 @@ function ingresar(){
 
 
 
-function elegirAmbiente(){
+/*function elegirAmbiente(){
     muebles = prompt("elija el ambiente por su numero:\n1-comedor \n2-dormitorio \n3-living")
     switch(muebles){
         case "1":
@@ -203,11 +202,10 @@ function elegirMueble(comedor,dormitorio,living){
     console.log("opcion no valida")
     elegirAmbiente()
   }
-}
-//crearCuenta()
-//ingresar()
+}*/
 
-//elegirAmbiente()
+
+
 
 //array de todos los muebles
 const totalMuebles=mesas.concat(sillas,banquetas,bancos,mueblesGuardado,respaldosCama,mesasLuz,racks,comodas,mesasBajas)
@@ -216,19 +214,75 @@ const mueblesLiving=racks.concat(comodas,mesasBajas,sillas)
 const mueblesComedor=sillas.concat(banquetas,bancos,mueblesGuardado,mesas)
 console.log (mueblesComedor)
 
-//quiero pedir un precio por prompt y se me hace un bucle y cuando pongo el numero anda bien
-//const baratos = totalMuebles.filter((mueble)=>mueble.precio<89000)
-//console.table(baratos)
 
-//ordenadas por precio
-totalMuebles.sort((a,b)=>a.precio - b.precio)
-console.table(totalMuebles)
+//declaracion de variables para el filtro 
+let filterName = document.getElementById ("filterName")
+//evento para el filtro por onchange 
+filterName.onchange=()=> {
+    initCards()
+}
+
+//funcion para filtrar por nombre de los muebles las cartas
+//si coincide el nombre se pushea en un nuevo array "products" sino muestra todos los muebles
+//luego vacio el html y que muestre todos muebles de vuelta
+function initCards(){
+    let products= [];
+
+    if(filterName.value) {
+    for(i=0;i<totalMuebles.length;i++){
+       let nombre = filterName.value
+       let mueble = totalMuebles[i]
+       if(mueble.nombre.includes(nombre.toUpperCase())){
+            products.push(mueble)
+       }
+    }
+    }else{
+        products = totalMuebles
+    }
+    let container = document.getElementById("cardsContainer")
+
+    container.innerHTML = '';
+
+    for(i=0;i<products.length;i++){
+        let mueble = products[i]
+        renderCard(mueble)
+    }
+}
+
+//funcion para crear las card
+function renderCard(producto){
+let imagen = producto.imagen
+let nombre = producto.nombre
+let medida = producto.medida
+let precio = producto.precio
+let container = document.getElementById("cardsContainer")
+let card = `
+<img src="${imagen}" alt="imagen">
+<div class="card-body">
+  <h5 class="card-title">${nombre}</h5>
+  <p class="card-text">${medida}</p>
+  <p class="card-text">${precio}</p>
+
+
+  <a href="#" class="btn btn-primary">opciones</a>
+</div>`
+
+ let node = document.createElement('div');
+ node.className = 'card'; 
+ node.style = 'width: 18rem;'
+ node.innerHTML = card;
+container.appendChild(node)
+}
+
+
+  
+//crearCuenta()
+//ingresar()
+initCards()
 
 
 
-/*elegir producto a fabricar
-elegir medida 
-elegir tipo de madera si aplica
-elegir color si aplica
-aclarar tiempo de demora */ 
+
+
+
 
