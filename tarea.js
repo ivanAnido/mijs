@@ -40,99 +40,22 @@ function ingresar(){
 
 
 
-/*function elegirAmbiente(){
-    muebles = prompt("elija el ambiente por su numero:\n1-comedor \n2-dormitorio \n3-living")
-    switch(muebles){
-        case "1":
-          comedor = prompt("elija el mueble por su numero: \n1-mesas \n2-sillas \n3-banquetas \n4-bancos \n5-muebles de guardado")
-          elegirMueble(comedor,dormitorio,living) 
-          break;
-        case "2":
-            dormitorio= prompt("elija el mueble por su numero:  \n1-respaldo de cama \n2-pie de cama \n3-mesa de luz \n4-muebles de guardado")
-            elegirMueble(comedor,dormitorio,living)
-            break;
-        case "3":
-            living = prompt("elija el mueble por su numero:  \n1-rack \n2-comodas \n3-mesas bajas")
-            elegirMueble(comedor,dormitorio,living)
-            break;
-        default:
-            alert("opcion no valida")
-            elegirAmbiente()
-    }
-}
-function elegirMueble(comedor,dormitorio,living){
-  if(comedor){
-    switch(comedor){
-        case "1":
-            console.table(mesas)
-            break;    
-        case "2":
-            console.table(sillas)
-            break;
-        case "3":
-            console.table(banquetas)
-            break;
-        case"4":
-            console.table(bancos)
-            break;
-        case "5":
-            console.table(mueblesGuardado)
-            break;
-        default:
-            console.table("opcion no valida")
-            elegirMueble()
-            break
-    }
-  }else if (dormitorio){
-    switch(dormitorio){
-        case "1":
-            console.table(respaldosCama)
-            break;    
-        case "2":
-            console.table(bancos)
-            break;
-        case "3":
-            console.table(mesasLuz)
-            break;
-        case "4":
-            console.table(mueblesGuardado)
-            break;
-        default:
-            console.table("opcion no valida")
-            elegirMueble()
-            break
-    }
-  }else if(living){
-    switch(living){
-        case "1":
-            console.table(racks)
-            break;    
-        case "2":
-            console.table(comodas)
-            break;
-        case "3":
-            console.table(mesasBajas)
-            break;
-        default:
-            console.table("opcion no valida")
-            elegirMueble()
-            break
-    }
-  }else{
-    console.log("opcion no valida")
-    elegirAmbiente()
-  }
-}*/
+let produccion = []
 
+if(localStorage.getItem("produccion")){
+    produccion=JSON.parse(localStorage.getItem("produccion"))
+   let {nombre, medida, material}=produccion
+    console.table(produccion)
+   document.getElementById("producir").innerHTML+= `
+<tr>
+<td scope="col">${nombre}</td>
+<td scope="col">${medida}</td>
+<td scope="col">${material}</td>
+</tr>
+`
+ }
+ 
 
-
-
-//array de todos los muebles
-const totalMuebles=mesas.concat(sillas,banquetas,bancos,mueblesGuardado,respaldosCama,mesasLuz,racks,comodas,mesasBajas)
-const mueblesDormitorio=respaldosCama.concat(bancos,mesasLuz,mueblesGuardado)
-const mueblesLiving=racks.concat(comodas,mesasBajas,sillas)
-const mueblesComedor=sillas.concat(banquetas,bancos,mueblesGuardado,mesas)
-console.log (mueblesComedor)
 
 
 //declaracion de variables para el filtro 
@@ -178,11 +101,9 @@ function initCards(){
 
 //funcion para crear las card
 function renderCard(producto){
-let imagen = producto.imagen
-let nombre = producto.nombre
-let medida = producto.medida
-let precio = producto.precio
-let material = producto.hechaDe
+//desestructuracion de mis objetos
+    let{imagen, nombre, medida, material} = producto
+
 let container = document.getElementById("cardsContainer")
 let card = `
 <img src="${imagen}" alt="imagen">
@@ -192,20 +113,21 @@ let card = `
 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
   <option selected>medidas</option>
   <option value="1">${medida}</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option value="2">2424123</option>
+  <option value="3">3453634</option>
 </select>
 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
   <option selected>tipo de madera</option>
   <option value="1">${material}</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option value="2">kiri</option>
+  <option value="3">lenga</option>
+  <option value="4">no aplica</option> 
 </select>
 <select class="form-select form-select-sm" aria-label=".form-select-sm example">
   <option selected>color a pintar</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option value="1">claro</option>
+  <option value="2">oscuro</option>
+  <option value="3">natural</option>
 </select>
 <button type="submit" id="btn${nombre}" class=" d-grid gap-2 col-6 mx-auto mt-1 btn btn-outline-success">submit</button>
 </div>
@@ -226,7 +148,6 @@ container.appendChild(node)
 
 function agregarProduccion(productoArmar){
 produccion.push(productoArmar)
-console.log(produccion)
 document.getElementById("producir").innerHTML+= `
 <tr>
 <td scope="col">${productoArmar.nombre}</td>
@@ -234,9 +155,15 @@ document.getElementById("producir").innerHTML+= `
 <td scope="col">${productoArmar.material}</td>
 </tr>
 `
+localStorage.setItem("produccion",JSON.stringify(produccion) )
 }
-const produccion = []
-//quiero agregar un evento a las card 
+
+
+function seleccionarOpcion(){
+    document.getElementById("formulario")
+}
+
+
 
 
   

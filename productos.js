@@ -1,7 +1,7 @@
 class Muebles{
     constructor(nombre, material, medida, imagen, precio,){
         this.nombre = nombre;
-        this.hechaDe = material;
+        this.material = material;
         this.medida = medida;
         this.precio = precio;
         this.imagen = imagen;
@@ -79,3 +79,9 @@ comodas.push(comoda001,comoda002)
 //mesas bajas
 const mesasBajas =[]
 mesasBajas.push(mesaRatona001,mesaRatona002,mesaRatonaZoita)
+
+//array de todos los muebles
+const totalMuebles=mesas.concat(sillas,banquetas,bancos,mueblesGuardado,respaldosCama,mesasLuz,racks,comodas,mesasBajas)
+const mueblesDormitorio=respaldosCama.concat(bancos,mesasLuz,mueblesGuardado)
+const mueblesLiving=racks.concat(comodas,mesasBajas,sillas)
+const mueblesComedor=sillas.concat(banquetas,bancos,mueblesGuardado,mesas)
