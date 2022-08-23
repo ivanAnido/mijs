@@ -1,6 +1,11 @@
 
 
-
+//fecha
+const DateTime =luxon.DateTime
+const dt = DateTime.now()
+//console.log(dt.toLocalString(DateTime.DATE_SHORT))
+const suma = dt.plus({days:60})
+//console.log(suma.toLocalString(DateTime.DATE_SHORT))
 //ingreso de usuario
 //variables
 let muebles 
@@ -37,25 +42,6 @@ function ingresar(){
         ingresar()
        }
 }
-
-
-
-let produccion = []
-
-if(localStorage.getItem("produccion")){
-    produccion=JSON.parse(localStorage.getItem("produccion"))
-   let {nombre, medida, material}=produccion
-    console.table(produccion)
-   document.getElementById("producir").innerHTML+= `
-<tr>
-<td scope="col">${nombre}</td>
-<td scope="col">${medida}</td>
-<td scope="col">${material}</td>
-</tr>
-`
- }
- 
-
 
 
 //declaracion de variables para el filtro 
@@ -129,7 +115,7 @@ let card = `
   <option value="2">oscuro</option>
   <option value="3">natural</option>
 </select>
-<button type="submit" id="btn${nombre}" class=" d-grid gap-2 col-6 mx-auto mt-1 btn btn-outline-success">submit</button>
+<button type="submit" id="btn${nombre}" class=" d-grid gap-2 col-6 mx-auto mt-1 btn btn-outline-success">CARGAR</button>
 </div>
 </div>`
 
@@ -142,27 +128,47 @@ container.appendChild(node)
  
    document.getElementById(`btn${nombre}`).addEventListener("click",function(){
     agregarProduccion(producto)
+ 
    })
 ;
 }
 
+
+let produccion = []
+
 function agregarProduccion(productoArmar){
 produccion.push(productoArmar)
-document.getElementById("producir").innerHTML+= `
-<tr>
-<td scope="col">${productoArmar.nombre}</td>
-<td scope="col">${productoArmar.medida}</td>
-<td scope="col">${productoArmar.material}</td>
-</tr>
-`
+//libreria toastify
+Toastify({
+    text:"producto agregado",
+    duration:2500,
+    gravity:"top",
+    position:"right"
+}).showToast()
+
 localStorage.setItem("produccion",JSON.stringify(produccion) )
+recuperarStorage()
+
 }
 
 
-function seleccionarOpcion(){
-    document.getElementById("formulario")
-}
 
+
+function recuperarStorage(){
+    //operardor logico or 
+     produccion = JSON.parse(localStorage.getItem("produccion")) || []
+     
+     document.getElementById("producir").innerHTML= ``
+     console.table(produccion)
+     produccion.forEach(element => {  
+        document.getElementById("producir").innerHTML+= `
+     <tr>
+     <td scope="col">${element.nombre}</td>
+     <td scope="col">${element.medida}</td>
+     <td scope="col">${element.material}</td>
+     </tr>
+     ` });
+}
 
 
 
