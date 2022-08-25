@@ -3,9 +3,12 @@
 //fecha
 const DateTime =luxon.DateTime
 const dt = DateTime.now()
-//console.log(dt.toLocalString(DateTime.DATE_SHORT))
-const suma = dt.plus({days:60})
-//console.log(suma.toLocalString(DateTime.DATE_SHORT))
+console.log(dt.toLocaleString(DateTime.DATE_SHORT))
+
+const vencimientoCorto = dt.plus({days:30}).toLocaleString(DateTime.DATE_SHORT)
+const vencimientoLargo = dt.plus({days:60}).toLocaleString(DateTime.DATE_SHORT)
+console.log(vencimientoLargo)
+
 //ingreso de usuario
 //variables
 let muebles 
@@ -161,13 +164,15 @@ function recuperarStorage(){
      document.getElementById("producir").innerHTML= ``
      console.table(produccion)
      produccion.forEach(element => {  
-        document.getElementById("producir").innerHTML+= `
-     <tr>
-     <td scope="col">${element.nombre}</td>
-     <td scope="col">${element.medida}</td>
-     <td scope="col">${element.material}</td>
-     </tr>
-     ` });
+     document.getElementById("producir").innerHTML+= `
+         <tr>
+         <td scope="col">${element.nombre}</td>
+         <td scope="col">${element.medida}</td>
+         <td scope="col">${element.material}</td>
+         <td scope="col">${element.vencimiento}</td>
+         </tr>
+         ` 
+     });
 }
 
 
