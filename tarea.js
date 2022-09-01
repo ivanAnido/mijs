@@ -1,5 +1,5 @@
 
-
+/*
 //fecha
 const DateTime =luxon.DateTime
 const dt = DateTime.now()
@@ -180,7 +180,7 @@ function recuperarStorage(){
   
 //crearCuenta()
 //ingresar()
-initCards()
+//initCards()*/
 
 
 

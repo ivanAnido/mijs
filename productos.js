@@ -1,3 +1,11 @@
+const DateTime =luxon.DateTime
+const dt = DateTime.now()
+console.log(dt.toLocaleString(DateTime.DATE_SHORT))
+
+const vencimientoCorto = dt.plus({days:30}).toLocaleString(DateTime.DATE_SHORT)
+const vencimientoLargo = dt.plus({days:60}).toLocaleString(DateTime.DATE_SHORT)
+console.log(vencimientoLargo)
+
 class Muebles{
     constructor(nombre, material, medida, imagen, vencimiento,){
         this.nombre = nombre;
@@ -11,7 +19,7 @@ class Muebles{
 
 //objetos
 //mesas
-const mesaComedor001 = new Muebles("Mesa de comedor 001".toUpperCase(),"Zoita","160x90x77","./assent/mesa comedor 001.jpeg")
+const mesaComedor001 = new Muebles("Mesa de comedor 001".toUpperCase(),"Zoita","160x90x77","./assent/mesa comedor 001.jpeg",vencimientoLargo )
 const mesaComedor002 = new Muebles("Mesa de comedor 002".toUpperCase(),"Zoita","160x90","./assent/mesa comedor 002.jpeg",112900)
 const mesaComedor003 = new Muebles("Mesa de comedor 003".toUpperCase(),"Lenga","90x120 redonda","./assent/mesa comedor 003.jpeg",88900)
 const mesaComedor004 = new Muebles("Mesa de comedor 004".toUpperCase(),"Zoita","190x85x77","./assent/mesa comedor 004.png",109900)
