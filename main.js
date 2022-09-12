@@ -33,7 +33,7 @@ function initCards(){
 
 function renderCard(producto){
     //desestructuracion de mis objetos
-        let{imagen, nombre, medida, material} = producto
+        let{imagen, nombre} = producto
     
     let container = document.getElementById("cardsContainer")
     let card = `
@@ -43,22 +43,22 @@ function renderCard(producto){
     <div id="formulario">
     <select id="medida${nombre}" class="form-select form-select-sm" aria-label=".form-select-sm example">
       <option selected>medidas</option>
-      <option value="qeqwe131">qeqwe131</option>
-      <option value="2424123">2424123</option>
-      <option value="la 3">la 3</option>
+      <option value="standar">standar</option>
+      <option value="chica">chica</option>
+      <option value="grande">grande</option>
     </select>
     <select id="material${nombre}" class="form-select form-select-sm" aria-label=".form-select-sm example">
       <option selected>tipo de madera</option>
-      <option value="1">${material}</option>
-      <option value="2">kiri</option>
-      <option value="3">lenga</option>
-      <option value="4">no aplica</option> 
+      <option value="zoita">zoita</option>
+      <option value="kiri">kiri</option>
+      <option value="lenga">lenga</option>
+      <option value="no aplica">no aplica</option> 
     </select>
     <select id="color${nombre}" class="form-select form-select-sm" aria-label=".form-select-sm example">
       <option selected>color a pintar</option>
-      <option value="1">claro</option>
-      <option value="2">oscuro</option>
-      <option value="3">natural</option>
+      <option value="claro">claro</option>
+      <option value="oscuro">oscuro</option>
+      <option value="natural">natural</option>
     </select>
     <button type="submit" id="btn${nombre}" class=" d-grid gap-2 col-6 mx-auto mt-1 btn btn-outline-success">CARGAR</button>
     </div>
