@@ -1,3 +1,4 @@
+//filtro por nombre en la lupa
 let filterName = document.getElementById ("filterName")
 //evento para el filtro por onchange 
 filterName.onchange=()=> {
@@ -82,7 +83,7 @@ function renderCard(producto){
         propductoModif.color = color;
 
 
-
+      
         agregarProduccion(propductoModif)
      
        })
@@ -93,7 +94,13 @@ function renderCard(producto){
 
 function agregarProduccion(productoArmar){
 
-    let produccion = JSON.parse(localStorage.getItem("produccion") || [])
+    let produccion = [];
+    const currentProduction = localStorage.getItem("produccion");
+    if (currentProduction) {
+        const productionArr = JSON.parse(currentProduction);
+        produccion = productionArr;
+    }
+
 
 produccion.push(productoArmar)
 //libreria toastify

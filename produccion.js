@@ -12,6 +12,7 @@ function recuperarStorage(){
          <tr>
          <td scope="col">${element.nombre}</td>
          <td scope="col">${element.medida}</td>
+         <td scope="col">${element.color}</td>
          <td scope="col">${element.material}</td>
          <td scope="col">${element.vencimiento}</td>
          </tr>
@@ -19,16 +20,3 @@ function recuperarStorage(){
      });
 }
 recuperarStorage()
-
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'a138643997mshd314618069c184ap15cd73jsn95087fdeba72',
-		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
-	}
-};
-
-fetch('https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
